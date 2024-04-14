@@ -1,0 +1,20 @@
+management:
+  server:
+    port: 9090
+  endpoints:
+    web:
+      exposure:
+        include: openapi, swagger-ui, health, info
+springdoc:
+  version: '@project.version@'
+  use-management-port: true
+  swagger-ui:
+    display-request-duration: true
+    groups-order: ASC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    use-root-path: true
+  show-actuator: true
+  group-configs:
+    - group: posts
+      packages-to-scan: 'com.klid'
